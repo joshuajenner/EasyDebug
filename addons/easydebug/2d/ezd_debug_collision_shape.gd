@@ -1,13 +1,23 @@
 @tool
 extends Node2D
 
-var collision_shape : CollisionShape2D
+@export var collision_shape : CollisionShape2D = null : 
+	set(value): _handle_col(value)
+
+
 var collision_shape_resource : Shape2D
 # var collision_shape_type = null
 
 var warning : PackedStringArray = PackedStringArray()
 const WARNING_STRING : String = "Please attach this node to a CollisionShape2D."
 
+const CENTRE : Vector2 = Vector2(0,0)
+
+@export var update_drawing : bool
+@export var draw_colour : Color
+
+func _handle_col(value):
+	pass
 
 func _enter_tree() -> void:
 	collision_shape = null
@@ -17,6 +27,10 @@ func _enter_tree() -> void:
 	
 	if collision_shape != null:
 		self.emit_signal("draw")
+
+
+func _process(delta):
+	self.emit_signal("draw")
 
 
 func check_parent() -> void:
@@ -46,11 +60,13 @@ func _get_configuration_warnings() -> PackedStringArray:
 
 
 func _draw() -> void:
+	print("uh")
 	if collision_shape_resource is CircleShape2D:
 		draw_circle_shape()
 	else:
 		pass
 
 func draw_circle_shape():
-	draw_circle(Vector2(0,0), collision_shape_resource.radius, "BLUE")
+	draw_arc(CENTRE, collision_shape_resource.radius, 0, 2*PI, 360, draw_colour, 1)
+#	draw_circle(Vector2(0,0), collision_shape_resource.radius, "BLUE")
 

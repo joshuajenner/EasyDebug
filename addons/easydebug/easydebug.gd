@@ -17,4 +17,4 @@ func _exit_tree():
 	remove_autoload_singleton(EASY_DEBUG_NAME)
 	
 	# Remove 2D Debug Custom Nodes
-	remove_custom_type("DebugCollisionShape2D")
+	remove_custom_type("EZDCollisionShape2D")
