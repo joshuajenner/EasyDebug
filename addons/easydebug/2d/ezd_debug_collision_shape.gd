@@ -21,7 +21,6 @@ func _enter_tree() -> void:
 
 
 func _draw() -> void:
-	print("uh")
 	if collision_shape_resource is CircleShape2D:
 		draw_circle_shape()
 	else:
