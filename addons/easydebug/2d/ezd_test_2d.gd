@@ -72,4 +72,3 @@ func _draw() -> void:
 func draw_circle_shape():
 	draw_arc(CENTRE, collision_shape_resource.radius, 0, 2*PI, 360, draw_colour, 1)
 #	draw_circle(Vector2(0,0), collision_shape_resource.radius, "BLUE")
-

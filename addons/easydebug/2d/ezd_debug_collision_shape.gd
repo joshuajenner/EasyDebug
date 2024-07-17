@@ -29,4 +29,3 @@ func _draw() -> void:
 func draw_circle_shape():
 	draw_arc(Vector2(0,0), collision_shape_resource.radius, 0, 2*PI, 360, "BLUE", 1)
 #	draw_circle(Vector2(0,0), collision_shape_resource.radius, "BLUE")
-
