@@ -2,45 +2,19 @@
 
 [ext_resource type="Script" path="res://addons/easydebug/overlay/print_value.gd" id="1_js64v"]
 
-[node name="PrintValue" type="MarginContainer"]
-anchors_preset = 8
-anchor_left = 0.5
+[node name="PrintValue" type="RichTextLabel"]
+anchors_preset = 6
+anchor_left = 1.0
 anchor_top = 0.5
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -202.0
+offset_left = -404.0
 offset_top = -11.5
-offset_right = 202.0
 offset_bottom = 11.5
-grow_horizontal = 2
+grow_horizontal = 0
 grow_vertical = 2
-size_flags_horizontal = 4
 size_flags_vertical = 4
-script = ExtResource("1_js64v")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="Key" type="Label" parent="HBoxContainer"]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-size_flags_horizontal = 0
-text = "Key"
-
-[node name="Divider" type="Label" parent="HBoxContainer"]
-layout_mode = 2
-text = ":"
-
-[node name="Value" type="RichTextLabel" parent="HBoxContainer"]
-clip_contents = false
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-size_flags_horizontal = 8
 bbcode_enabled = true
-text = "[right][color=\"red\"]False[/color][/right]"
 fit_content = true
-scroll_active = false
 autowrap_mode = 0
-shortcut_keys_enabled = false
+script = ExtResource("1_js64v")
