@@ -6,17 +6,17 @@ extends CanvasLayer
 
 var _value_label: PackedScene = preload("res://addons/easydebug/overlay/print_value.tscn")
 
+var _toggle_action: String = "ezd_toggle"
+
 
 
 func _ready() -> void:
-	self.print("speed_movement", Vector3.LEFT)
-	self.print("speed_projectile", Vector3.ZERO)
-	self.print("is_player_grounded", true)
+	visible = false
 
 
-func _physics_process(delta: float) -> void:
-	self.print("Time", Time.get_ticks_msec())
-	
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed(_toggle_action):
+		visible = not visible
 
 
 func print(key: String, value: Variant) -> void:
@@ -47,7 +47,7 @@ func remove(key: String) -> void:
 func clear() -> void:
 	for child: Node in _keys_container.get_children():
 		child.queue_free()
-		
+	
 	for child: Node in _values_container.get_children():
 		child.queue_free()
 
